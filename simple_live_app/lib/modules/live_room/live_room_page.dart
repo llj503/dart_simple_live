@@ -234,7 +234,6 @@ class LiveRoomPage extends GetView<LiveRoomController> {
             ],
           ),
         ),
-        //buildBottomActions(context),
       ],
     );
   }
@@ -674,6 +673,17 @@ class LiveRoomPage extends GetView<LiveRoomController> {
                   value: AppSettingsController.instance.chatBubbleStyle.value,
                   onChanged: (e) {
                     AppSettingsController.instance.setChatBubbleStyle(e);
+                  },
+                ),
+              ),
+              AppStyle.divider,
+              Obx(
+                () => SettingsSwitch(
+                  title: "播放器中显示SC",
+                  value:
+                      AppSettingsController.instance.playershowSuperChat.value,
+                  onChanged: (e) {
+                    AppSettingsController.instance.setPlayerShowSuperChat(e);
                   },
                 ),
               ),
